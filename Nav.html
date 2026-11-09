@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menu điều hướng - Nhà sách ABC</title>
+</head>
+
+<body style="background-color: white;">
+
+    <!-- PHẦN 1: MENU ĐIỀU HƯỚNG -->
+    <nav>
+        <ul>
+            <li>
+                <a href="TrangChu.html">
+                    TRANG CHỦ
+                </a>
+            </li>
+
+            <li>
+                <a href="/NhasacgABC/Gioithieu.html">
+                    GIỚI THIỆU
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    LIÊN HỆ
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- PHẦN 2: TÌM KIẾM SÁCH -->
+    <div>
+        <form action="#" method="get"
+              onsubmit="return timSach(event)">
+
+            <input type="text"
+                   size="36"
+                   name="tsearch"
+                   id="tsearch"
+                   placeholder="Hãy nhập tên sách cần tìm ...">
+
+            <input type="submit"
+                   value="Tìm sách"
+                   title="Tìm sách">
+
+        </form>
+    </div>
+
+    <script>
+        function timSach(event) {
+            event.preventDefault();
+
+            let tenSach = document.getElementById(
+                "tsearch"
+            ).value.trim();
+
+            if (tenSach === "") {
+                alert("Vui lòng nhập tên sách cần tìm!");
+            } else {
+                alert("Bạn đang tìm sách: " + tenSach);
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
