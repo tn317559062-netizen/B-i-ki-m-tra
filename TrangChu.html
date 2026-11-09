@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Trang chủ - Nhà sách ABC</title>
+
+    <style>
+        body {
+            background-color: white;
+            font-family: "Times New Roman", serif;
+            margin: 8px;
+        }
+
+        header {
+            text-align: center;
+            padding: 15px;
+        }
+
+        header img {
+            width: 180px;
+            height: 110px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            color: green;
+            font-size: 30px;
+        }
+
+        .taikhoan {
+            text-align: right;
+            padding: 10px;
+        }
+
+        nav {
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            padding-left: 0;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav a {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .timkiem {
+            margin-top: 15px;
+        }
+
+        .hinhsach {
+            text-align: center;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .hinhsach table {
+            margin: auto;
+        }
+
+        .hinhsach img {
+            width: 150px;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        article {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            align-items: flex-start;
+        }
+
+        .left {
+            width: 22%;
+            background-color: #E6FFFF;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 50%;
+            text-align: center;
+            background-color: #F5F5F5;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .right {
+            width: 28%;
+            padding: 10px;
+            background-color: #FAFAFA;
+            box-sizing: border-box;
+        }
+
+        .right img {
+            width: 65px;
+            height: 85px;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #F2F2F2;
+            margin-top: 25px;
+            padding: 15px;
+        }
+
+        @media (max-width: 700px) {
+            article {
+                flex-direction: column;
+            }
+
+            .left, section, .right {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BÀI 8: HEADER -->
+    <header>
+
+        <div>
+            <img src="Images/Nhasach.jpg"
+                 alt="Logo Nhà sách ABC">
+
+            <h1>WELCOME TO SÁCH ABC</h1>
+        </div>
+
+        <div class="taikhoan">
+
+            <a href="DangNhap.html">
+                Đăng nhập
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="Dangky.html">
+                Đăng ký
+            </a>
+
+            &nbsp; | &nbsp;
+
+            <a href="#">
+                🛒 Giỏ hàng
+            </a>
+
+        </div>
+
+    </header>
+
+    <hr>
+
+    <!-- BÀI 9: NAV -->
+    <nav>
+
+        <ul>
+            <li>
+                <a href="TrangChu.html">
+                    TRANG CHỦ
+                </a>
+            </li>
+
+            <li>
+                <a href="Gioithieu.html">
+                    GIỚI THIỆU
+                </a>
+            </li>
+
+            <li>
+                <a href="Lienhe.html">
+                    LIÊN HỆ
+                </a>
+            </li>
+        </ul>
+
+        <div class="timkiem">
+
+            <form onsubmit="timSach(event)">
+
+                <input type="text"
+                       id="tsearch"
+                       name="tsearch"
+                       size="36"
+                       placeholder="Hãy nhập tên sách cần tìm ...">
+
+                <input type="submit"
+                       value="Tìm sách"
+                       title="Tìm sách">
+
+            </form>
+
+        </div>
+
+    </nav>
+
+    <hr>
+
+    <!-- BÀI 10: HÌNH ẢNH SÁCH -->
+    <div class="hinhsach">
+
+        <table border="0" cellspacing="5">
+            <tr>
+
+                <td>
+                    <img src="Images/DacNhanTam.jpg"
+                         alt="Đắc Nhân Tâm">
+                </td>
+
+                <td>
+                    <img src="Images/Danhcapytuong.jpg"
+                         alt="Đánh cấp ý tưởng">
+                </td>
+
+                <td>
+                    <img src="Images/Nghilamgiau.jpg"
+                         alt="Nghĩ giàu làm giàu">
+                </td>
+
+                <td>
+                    <img src="Images/TDTCTTC.JPG"
+                         alt="Tư duy tích cực">
+                </td>
+
+                <td>
+                    <img src="Images/CTCQTB.JPG"
+                         alt="Chiến thắng con quỷ">
+                </td>
+
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- PHẦN THÂN WEBSITE -->
+    <article>
+
+        <!-- BÀI 2: LEFT -->
+        <aside class="left">
+
+            <h2>Sách theo chủ đề</h2>
+
+            <ul type="square">
+                <li><a href="#">Ngoại ngữ</a></li>
+                <li><a href="#">Công nghệ thông tin</a></li>
+                <li><a href="#">Văn học</a></li>
+                <li><a href="#">Toán học</a></li>
+                <li><a href="#">Luật</a></li>
+                <li><a href="#">Kinh tế</a></li>
+            </ul>
+
+            <h2>Sách theo nhà xuất bản</h2>
+
+            <ul type="square">
+                <li>
+                    <a href="#">Nhà xuất bản Tuổi Trẻ</a>
+                </li>
+                <li>
+                    <a href="#">NXB Thống kê</a>
+                </li>
+                <li>
+                    <a href="#">NXB Kim Đồng</a>
+                </li>
+            </ul>
+
+        </aside>
+
+        <!-- BÀI 3: SẢN PHẨM -->
+        <section>
+
+            <h2>
+                <a href="Chitietsanpham.html"
+                   style="color: blue;">
+                    SÁCH ĐẮC NHÂN TÂM
+                </a>
+            </h2>
+
+            <a href="Chitietsanpham.html">
+
+                <img src="Images/dacnhantam.jpg"
+                     width="250"
+                     alt="Sách Đắc Nhân Tâm">
+
+            </a>
+
+            <p>
+                Đơn giá:
+                <font size="5" color="red">
+                    <b>100,000 VNĐ</b>
+                </font>
+            </p>
+
+            <p>
+                <a href="Chitietsanpham.html">
+                    <font size="5">
+                        🛒 Đặt mua
+                    </font>
+                </a>
+            </p>
+
+        </section>
+
+        <!-- BÀI 7: RIGHT -->
+        <aside class="right">
+
+            <h3>SÁCH BÁN NHIỀU</h3>
+
+            <marquee direction="up"
+                     scrollamount="3"
+                     scrolldelay="100"
+                     height="300"
+                     onmouseover="this.stop()"
+                     onmouseout="this.start()">
+
+                <p>
+                    <a href="Chitietsanpham.html">
+                        <img src="Images/dacnhantam.jpg"
+                             alt="Đắc Nhân Tâm">
+                        Đắc Nhân Tâm
+                    </a>
+                </p>
+
+                <br>
+
+                <p>
+                    <a href="#">
+                        <img src="Images/Danhcapytuong.jpg"
+                             alt="Đánh cấp ý tưởng">
+                        Đánh cấp ý tưởng
+                    </a>
+                </p>
+
+                <br>
+
+                <p>
+                    <a href="#">
+                        <img src="Images/Nghilamgiau.jpg"
+                             alt="Nghĩ giàu làm giàu">
+                        Nghĩ giàu làm giàu
+                    </a>
+                </p>
+
+            </marquee>
+
+            <h3>LIÊN KẾT WEBSITE</h3>
+
+            <select style="width: 100%;"
+                    onchange="if(this.value) window.open(this.value, '_blank')">
+
+                <option value="">
+                    --- Chọn trang liên kết ---
+                </option>
+
+                <option value="https://vci.edu.vn/">
+                    Trường Cao đẳng Công thương Việt Nam
+                </option>
+
+            </select>
+
+            <h3>THỐNG KÊ TRUY CẬP</h3>
+
+            <p>Đang online: 5</p>
+
+            <p>Tổng lượt truy cập: 12345</p>
+
+        </aside>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            ©2016 - Nhà sách ABC.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Website được phát triển để sử dụng
+            làm bài tập thực hành môn Xây Dựng Web.
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:hotro@abc.com">
+                hotro@abc.com
+            </a>
+        </p>
+
+    </footer>
+
+    <script>
+        function timSach(event) {
+            event.preventDefault();
+
+            let tenSach = document
+                .getElementById("tsearch")
+                .value.trim();
+
+            if (tenSach === "") {
+                alert("Vui lòng nhập tên sách!");
+            } else {
+                alert("Bạn đang tìm: " + tenSach);
+            }
+        }
+    </script>
+
+</body>
+</html>
