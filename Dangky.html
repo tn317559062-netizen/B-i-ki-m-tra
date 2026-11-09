@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký thành viên - Nhà sách ABC</title>
+</head>
+
+<body>
+
+    <form action="#" name="dangky"
+          method="post"
+          onsubmit="return kiemTraDangKy(event)">
+
+        <table border="1" cellspacing="0"
+               cellpadding="5" width="500"
+               align="center">
+
+            <tr>
+                <td align="center">
+                    <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+
+                    <!-- THÔNG TIN CÁ NHÂN -->
+                    <fieldset>
+                        <legend>
+                            <b>Thông tin cá nhân</b>
+                        </legend>
+
+                        <table>
+                            <tr>
+                                <td>Họ và tên:</td>
+                                <td>
+                                    <input type="text"
+                                           name="hoten"
+                                           size="30">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Ngày sinh:</td>
+                                <td>
+                                    <select name="ngay" id="ngay"></select>
+
+                                    Tháng
+                                    <select name="thang" id="thang"></select>
+
+                                    Năm
+                                    <input type="number"
+                                           name="nam"
+                                           min="1900"
+                                           max="2026"
+                                           style="width: 65px;">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Giới tính:</td>
+                                <td>
+                                    <label>
+                                        <input type="radio"
+                                               name="gioitinh"
+                                               value="Nam"
+                                               checked>
+                                        Nam
+                                    </label>
+
+                                    <label>
+                                        <input type="radio"
+                                               name="gioitinh"
+                                               value="Nữ">
+                                        Nữ
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Địa chỉ:</td>
+                                <td>
+                                    <textarea name="diachi"
+                                              rows="3"
+                                              cols="30"></textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Điện thoại:</td>
+                                <td>
+                                    <input type="tel"
+                                           name="dienthoai"
+                                           size="25">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Email:</td>
+                                <td>
+                                    <input type="email"
+                                           name="email"
+                                           size="25"
+                                           required>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <br>
+
+                    <!-- THÔNG TIN ĐĂNG NHẬP -->
+                    <fieldset>
+                        <legend>
+                            <b>Thông tin đăng nhập</b>
+                        </legend>
+
+                        <table>
+                            <tr>
+                                <td>Tên đăng nhập:</td>
+                                <td>
+                                    <input type="text"
+                                           name="tendangnhap"
+                                           size="27"
+                                           required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Mật khẩu:</td>
+                                <td>
+                                    <input type="password"
+                                           name="matkhau"
+                                           id="matkhau"
+                                           size="27"
+                                           required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Nhập lại mật khẩu:</td>
+                                <td>
+                                    <input type="password"
+                                           name="nhaplaimatkhau"
+                                           id="nhaplaimatkhau"
+                                           size="27"
+                                           required>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    <input type="submit"
+                           value="Đăng ký">
+
+                    <input type="reset"
+                           value="Hủy">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+    <script>
+        // Tạo danh sách ngày từ 01 đến 31
+        const ngay = document.getElementById("ngay");
+
+        for (let i = 1; i <= 31; i++) {
+            let so = String(i).padStart(2, "0");
+            ngay.innerHTML +=
+                `<option value="${so}">${so}</option>`;
+        }
+
+        // Tạo danh sách tháng từ 01 đến 12
+        const thang = document.getElementById("thang");
+
+        for (let i = 1; i <= 12; i++) {
+            let so = String(i).padStart(2, "0");
+            thang.innerHTML +=
+                `<option value="${so}">${so}</option>`;
+        }
+
+        // Kiểm tra dữ liệu đăng ký
+        function kiemTraDangKy(event) {
+            event.preventDefault();
+
+            let mk = document.getElementById("matkhau").value;
+            let nhapLai = document.getElementById("nhaplaimatkhau").value;
+
+            if (mk !== nhapLai) {
+                alert("Mật khẩu nhập lại không khớp!");
+                return false;
+            }
+
+            alert("Đăng ký hợp lệ (bản mô phỏng)!");
+            return false;
+        }
+    </script>
+
+</body>
+</html>
