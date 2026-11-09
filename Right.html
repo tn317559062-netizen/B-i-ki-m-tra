@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Right - Nhà sách ABC</title>
+</head>
+
+<body>
+
+    <!-- PHẦN 1: SÁCH BÁN NHIỀU -->
+    <p>
+        <font size="5">
+            <b>SÁCH BÁN NHIỀU</b>
+        </font>
+    </p>
+
+    <marquee direction="up"
+             scrollamount="3"
+             scrolldelay="100"
+             height="300"
+             width="350"
+             onmouseover="this.stop()"
+             onmouseout="this.start()">
+
+        <!-- Sách 1 -->
+        <p>
+            <a href="Chitietsanpham.html">
+                <img src="Images/DacNhanTam.jpg"
+                     width="80"
+                     height="100"
+                     style="vertical-align: middle;"
+                     alt="Đắc Nhân Tâm">
+
+                Đắc Nhân Tâm
+            </a>
+        </p>
+
+        <br>
+
+        <!-- Sách 2 -->
+        <p>
+            <a href="#">
+                <img src="Images/Danhcapytuong.jpg"
+                     width="80"
+                     height="100"
+                     style="vertical-align: middle;"
+                     alt="Đánh cấp ý tưởng">
+
+                Đánh cấp ý tưởng
+            </a>
+        </p>
+
+        <br>
+
+        <!-- Sách 3 -->
+        <p>
+            <a href="#">
+                <img src="Images/Nghilamgiau.jpg"
+                     width="80"
+                     height="100"
+                     style="vertical-align: middle;"
+                     alt="Nghĩ giàu làm giàu">
+
+                Nghĩ giàu làm giàu
+            </a>
+        </p>
+
+    </marquee>
+
+    <!-- PHẦN 2: LIÊN KẾT WEBSITE -->
+    <p>
+        <font size="5">
+            <b>LIÊN KẾT WEBSITE</b>
+        </font>
+    </p>
+
+    <select onchange="if(this.value)
+                      window.open(this.value, '_blank')"
+            style="width: 350px;">
+
+        <option value="">
+            --- Chọn trang liên kết ---
+        </option>
+
+        <option value="https://vci.edu.vn/">
+            Trường Cao đẳng Công thương Việt Nam
+        </option>
+
+        <option value="https://vci.edu.vn/">
+            Khoa Công nghệ thông tin và AI
+        </option>
+
+    </select>
+
+    <!-- PHẦN 3: THỐNG KÊ TRUY CẬP -->
+    <p>
+        <font size="5">
+            <b>THỐNG KÊ TRUY CẬP</b>
+        </font>
+    </p>
+
+    <p>
+        <font size="4">
+            Đang online: 5
+        </font>
+    </p>
+
+    <p>
+        <font size="4">
+            Tổng lượt truy cập: 12345
+        </font>
+    </p>
+
+</body>
+</html>
